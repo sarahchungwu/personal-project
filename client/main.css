@@ -1,5 +1,9 @@
-body {
-  background-color: #faf8f1;
-  color: #0a1520;
+body {  
+  background-image: url('../public/images/background1.png');
+  background-size:cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #c3d6e9;
   font-family: 'Poppins', sans-serif;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
