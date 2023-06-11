@@ -1,5 +1,7 @@
-body {
-  background-color: #faf8f1;
-  color: #0a1520;
+body {  
+  background-color: #F9F5F6;
+  color: #133c65;
   font-family: 'Poppins', sans-serif;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
