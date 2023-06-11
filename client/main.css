@@ -1,8 +1,6 @@
 body {  
-  background-image: url('../public/images/background1.png');
-  background-size:cover;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #c3d6e9;
+  background-color: #F9F5F6;
+  color: #133c65;
   font-family: 'Poppins', sans-serif;
   background-repeat: no-repeat;
   height: 100vh;

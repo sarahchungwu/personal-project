@@ -1,11 +1,14 @@
+import { Outlet } from 'react-router-dom'
+import Nav from './Nav'
+
 function App() {
   return (
-    <div>
-      <div className="container">
-        <h1>App</h1>
-        <p>React development has begun!</p>
+    <>
+      <Nav />
+      <div className="body-container">
+        <Outlet />
       </div>
-    </div>
+    </>
   )
 }
 
