@@ -6,7 +6,7 @@ function PetMainPage() {
       name: 'Bubble',
       age: 2,
       breed: 'pug',
-      discription: 'grumpy',
+      description: 'grumpy',
       image: './images/pug.jpg',
     },
     {
@@ -14,7 +14,7 @@ function PetMainPage() {
       name: 'Lucas',
       age: 1,
       breed: 'husky',
-      discription: 'sillybilly',
+      description: 'sillybilly',
       image: '/images/husky.jpg',
     },
     {
@@ -22,7 +22,7 @@ function PetMainPage() {
       name: 'Kitty',
       age: 1,
       breed: 'shiba inu',
-      discription: 'love smiling',
+      description: 'love smiling',
       image: '/images/shibaInu.jpg',
     },
     {
@@ -30,12 +30,33 @@ function PetMainPage() {
       name: 'Buzz',
       age: 2,
       breed: 'samoyed',
-      discription: 'love walking',
+      description: 'love walking',
       image: '/images/samoyed.jpg',
     },
   ]
 
-  return <h1>Iam in the Pet Main Page</h1>
+  return (
+    <ul>
+      {dogData.map((dog) => (
+        <li key={dog.id}>
+          <div className="formContainer">
+            <form className="dogForm">
+              <div className="dogBox">
+                <img src={dog.image} alt={dog.name} />
+                <p>Name: {dog.name}</p>
+                <p>Age: {dog.age}</p>
+                <p>Breed: {dog.breed}</p>
+                <p>Description: {dog.description}</p>
+                <button type="button" onClick={() => handleSelectDog(dog)}>
+                  Select Dog
+                </button>
+              </div>
+            </form>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default PetMainPage

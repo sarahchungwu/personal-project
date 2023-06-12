@@ -5,3 +5,57 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
 }
+ul {
+  list-style-type: none;
+}
+.formContainer {
+  width:90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dogForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dogBox {
+  width:400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.dogBox img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dogBox p {
+  margin-bottom: 5px;
+}
+
+.dogBox button {
+  background-color: #FDCEDF;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dogBox button:hover {
+  background-color: #F2BED1;
+}
