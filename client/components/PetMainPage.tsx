@@ -37,9 +37,9 @@ function PetMainPage() {
 
   return (
     <ul>
-      {dogData.map((dog) => (
-        <li key={dog.id}>
-          <div className="formContainer">
+      <div className="formContainer">
+        {dogData.map((dog) => (
+          <li key={dog.id}>
             <form className="dogForm">
               <div className="dogBox">
                 <img src={dog.image} alt={dog.name} />
@@ -52,9 +52,9 @@ function PetMainPage() {
                 </button>
               </div>
             </form>
-          </div>
-        </li>
-      ))}
+          </li>
+        ))}
+      </div>
     </ul>
   )
 }

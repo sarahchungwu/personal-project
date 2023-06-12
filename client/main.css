@@ -16,12 +16,14 @@ ul {
   justify-content: center;
 }
 .dogForm {
+  margin:20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .dogBox {
+
   width:400px;
   display: flex;
   flex-direction: column;
@@ -39,7 +41,8 @@ ul {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.8);
 }
 
 .dogBox p {
