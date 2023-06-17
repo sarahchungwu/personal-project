@@ -6,7 +6,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom'
 import App from './components/App'
-import { useState } from 'react'
+
 import PetMainPage from './components/PetMainPage'
 import PetDetail from './components/PetDetail'
 import Study from './components/Study'
