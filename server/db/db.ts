@@ -1,9 +1,9 @@
+import { DogData } from '../../common/dogs'
 import connection from '../db/connection'
-// import { FrankenPokemon, Pokemon } from '../../models/PokemonModels'
 
-// export async function getPokemon(db = connection) {
-//   return db('pokemon').select() as Promise<Pokemon[]>
-// }
+export async function getAllDogs(db = connection) {
+  return db('dogs').select() as Promise<DogData[]>
+}
 
 // export async function getFrankenPokemon(db = connection) {
 //   return db('frankenpokemon').select() as Promise<FrankenPokemon[]>
