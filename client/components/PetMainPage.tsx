@@ -1,4 +1,4 @@
-import { DogDataBackend } from '../../models/dogs'
+import { DogDataBackend } from '../../common/dogs'
 function PetMainPage() {
   const dogData: DogDataBackend[] = [
     {
@@ -6,7 +6,8 @@ function PetMainPage() {
       name: 'Bubble',
       age: 2,
       breed: 'pug',
-      description: 'grumpy',
+      personality: 'grumpy',
+      description: 'always hungry',
       image: './images/pug.jpg',
     },
     {
@@ -14,7 +15,9 @@ function PetMainPage() {
       name: 'Lucas',
       age: 1,
       breed: 'husky',
-      description: 'sillybilly',
+      personality: 'Energetic',
+      description:
+        'love engaging in activities such as running, hiking, and playing',
       image: '/images/husky.jpg',
     },
     {
@@ -22,7 +25,8 @@ function PetMainPage() {
       name: 'Kitty',
       age: 1,
       breed: 'shiba inu',
-      description: 'love smiling',
+      personality: 'Strong-willed',
+      description: 'Always choose to follow her own instincts and preference',
       image: '/images/shibaInu.jpg',
     },
     {
@@ -30,7 +34,9 @@ function PetMainPage() {
       name: 'Buzz',
       age: 2,
       breed: 'samoyed',
-      description: 'love walking',
+      personality: 'Friendly',
+      description:
+        'enjoy the company of family members and are generally welcoming towards strangers',
       image: '/images/samoyed.jpg',
     },
   ]
@@ -43,10 +49,21 @@ function PetMainPage() {
             <form className="dogForm">
               <div className="dogBox">
                 <img src={dog.image} alt={dog.name} />
-                <p>Name: {dog.name}</p>
-                <p>Age: {dog.age}</p>
-                <p>Breed: {dog.breed}</p>
-                <p>Description: {dog.description}</p>
+                <p>
+                  <b>Name</b>: {dog.name}
+                </p>
+                <p>
+                  <b>Age</b>: {dog.age}
+                </p>
+                <p>
+                  <b>Breed</b>: {dog.breed}
+                </p>
+                <p>
+                  <b>Personality</b>: {dog.personality}
+                </p>
+                <p>
+                  <b>Description</b>: {dog.description}
+                </p>
                 <button type="button" onClick={() => handleSelectDog(dog)}>
                   Select Dog
                 </button>
