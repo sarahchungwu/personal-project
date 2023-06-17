@@ -9,6 +9,8 @@ import App from './components/App'
 import { useState } from 'react'
 import PetMainPage from './components/PetMainPage'
 import PetDetail from './components/PetDetail'
+import Study from './components/Study'
+import Shop from './components/Shop'
 
 function AppProvider() {
   // const initialState = [{ name: 'Typescript', difficulty: 1 }]
@@ -19,6 +21,8 @@ function AppProvider() {
       <Route path="/" element={<App />}>
         <Route index element={<PetMainPage />} />
         <Route path="/detail" element={<PetDetail />} />
+        <Route path="/study" element={<Study />} />
+        <Route path="/shop" element={<Shop />} />
       </Route>
     )
   )
