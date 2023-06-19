@@ -14,4 +14,16 @@ router.get('/', async (req: Request, res: Response) => {
   }
 })
 
+router.post('/', async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.body.id)
+    db.createSelectedDog(id)
+    res.sendStatus(201)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router
