@@ -16,6 +16,7 @@ router.get('/', async (req: Request, res: Response) => {
 
 router.post('/', async (req: Request, res: Response) => {
   try {
+    console.log('I am in the server', req.body.id)
     const id = Number(req.body.id)
     db.createSelectedDog(id)
     res.sendStatus(201)

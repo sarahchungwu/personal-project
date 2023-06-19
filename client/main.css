@@ -23,15 +23,11 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
 }
-.dogForm {
-  margin:20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .dogBox {
 
+  margin: 20px;
   width:400px;
   display: flex;
   flex-direction: column;
