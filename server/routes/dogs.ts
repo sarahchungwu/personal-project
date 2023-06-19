@@ -26,4 +26,17 @@ router.post('/', async (req: Request, res: Response) => {
   }
 })
 
+router.get('/detail', async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.body.id)
+    const selectedDog = await db.getSelectedDog(id)
+
+    res.json(selectedDog)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router
