@@ -6,6 +6,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom'
 import App from './components/App'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 import PetMainPage from './components/PetMainPage'
 import PetDetail from './components/PetDetail'
@@ -30,7 +31,10 @@ function AppProvider() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const queryClient = new QueryClient()
   createRoot(document.getElementById('app') as HTMLElement).render(
-    <AppProvider />
+    <QueryClientProvider client={queryClient}>
+      <AppProvider />
+    </QueryClientProvider>
   )
 })

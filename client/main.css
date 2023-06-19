@@ -147,8 +147,8 @@ form label {
 .submit-button {
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: pink;
-  color: white;
+  background-color: #F3C5C5;
+  color: #694E4E;;
   font-weight: bold;
   border: none;
   cursor: pointer;
