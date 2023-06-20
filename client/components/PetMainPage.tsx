@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { addSelectedDog, fetchDogs } from '../apis/dogsApis'
 function PetMainPage() {

@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { DogData, DogDataBackend } from '../../common/dogs'
+import { DogDataBackend } from '../../common/dogs'
 
 const rootUrl = 'api/v1/dogs'
 
