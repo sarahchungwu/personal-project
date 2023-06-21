@@ -1,7 +1,9 @@
 import { FormEvent } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
+import { useNavigate } from 'react-router-dom'
 import { addSelectedDog, fetchDogs } from '../apis/dogsApis'
 function PetMainPage() {
+  const navigate = useNavigate()
   const { isLoading, data } = useQuery('getDogs', async () => {
     return await fetchDogs()
   })
@@ -17,6 +19,7 @@ function PetMainPage() {
     event.preventDefault()
     console.log('Selected Dog ID:', id)
     mutations.mutate(id)
+    navigate('/detail')
   }
 
   return (
