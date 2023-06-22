@@ -1,25 +1,15 @@
 import { FormEvent } from 'react'
-import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { useNavigate } from 'react-router-dom'
-import { addSelectedDog, fetchDogs } from '../apis/dogsApis'
+import { useQuery } from 'react-query'
+import { Link } from 'react-router-dom'
+import { fetchDogs } from '../apis/dogsApis'
 function PetMainPage() {
-  const navigate = useNavigate()
   const { isLoading, data } = useQuery('getDogs', async () => {
     return await fetchDogs()
-  })
-
-  const queryClient = useQueryClient()
-  const mutations = useMutation(addSelectedDog, {
-    onSuccess: () => {
-      console.log('selected')
-    },
   })
 
   function handleSubmit(event: FormEvent, id: number) {
     event.preventDefault()
     console.log('Selected Dog ID:', id)
-    mutations.mutate(id)
-    navigate('/detail')
   }
 
   return (
@@ -51,7 +41,12 @@ function PetMainPage() {
                     type="submit"
                     onClick={(event) => handleSubmit(event, dog.id)}
                   >
-                    Select Dog
+                    <Link
+                      to={`/detail/${dog.id}`}
+                      style={{ textDecoration: 'none', color: '#694E4E' }}
+                    >
+                      Select Dog
+                    </Link>
                   </button>
                 </div>
               </li>

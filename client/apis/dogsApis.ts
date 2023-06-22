@@ -8,6 +8,6 @@ export async function fetchDogs() {
   return res.body as DogDataBackend[]
 }
 
-export async function addSelectedDog(id: number) {
-  return request.post(rootUrl).send({ id: id })
-}
+// export async function addSelectedDog(id: number) {
+//   return request.post(rootUrl).send({ id: id })
+// }
