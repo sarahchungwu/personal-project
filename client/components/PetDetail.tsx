@@ -22,10 +22,10 @@ function PetDetail() {
   }
 
   return (
-    <>
-      <div className="Profile-form">
-        <div className="dogBox" key={data.name}>
-          <img src={`${data.image}`} alt={data.name} />
+    <div className="profile-box">
+      <div className="profile-card" key={data.name}>
+        <img src={`${data.image}`} alt={data.name} />
+        <div className="profile-text-box">
           <p>
             <b>Name</b>: {data.name}
           </p>
@@ -41,29 +41,13 @@ function PetDetail() {
           <p>
             <b>Description</b>: {data.description}
           </p>
-          <button type="submit">Edit Profile</button>
         </div>
 
-        {/* <h1>Bubble-Variable</h1>
-        <img src="" alt="" />
-        <p>
-          <b>Name</b>
-        </p>
-        <p>
-          <b>Age</b>: {data.age}
-        </p>
-        <p>
-          <b>Breed</b>: {data.breed}
-        </p>
-        <p>
-          <b>Personality</b>: {data.personality}
-        </p>
-        <p>
-          <b>Description</b>:{data.description}
-        </p>
-        <button type="button">Edit Dog</button> */}
+        <button type="submit" className="btn">
+          Edit Profile
+        </button>
       </div>
-    </>
+    </div>
   )
 }
 
