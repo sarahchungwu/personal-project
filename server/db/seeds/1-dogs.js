@@ -7,7 +7,7 @@ exports.seed = async function (knex) {
       breed: 'pug',
       personality: 'grumpy',
       description: 'always hungry',
-      image: './images/pug.jpg',
+      image: '/images/pug.jpg',
     },
     {
       id: 2,
