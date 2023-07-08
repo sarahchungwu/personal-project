@@ -1,27 +1,53 @@
+import { useQuery } from 'react-query'
+import { useParams } from 'react-router-dom'
+import { fetchSelectedDog } from '../apis/dogsApis'
+
 function PetDetail() {
+  const dogId = useParams().id
+
+  const { isLoading, data } = useQuery(
+    ['fetchSelectedDog', dogId],
+    async () => {
+      return await fetchSelectedDog(Number(dogId))
+    }
+  )
+  if (isLoading) return 'Loading...'
+
+  if (!data) {
+    return 'No data available'
+  }
+
+  if (data === null) {
+    return 'Selected dog not found'
+  }
+
   return (
-    <>
-      <div className="Profile-form">
-        <h1>Bubble-Variable</h1>
-        <img src="" alt="" />
-        <p>
-          <b>Name</b>:test
-        </p>
-        <p>
-          <b>Age</b>: test
-        </p>
-        <p>
-          <b>Breed</b>: test
-        </p>
-        <p>
-          <b>Personality</b>: test
-        </p>
-        <p>
-          <b>Description</b>: test
-        </p>
-        <button type="button">Edit Dog</button>
+    <div className="profile-box">
+      <div className="profile-card" key={data.name}>
+        <img src={`${data.image}`} alt={data.name} />
+        <div className="profile-text-box">
+          <p>
+            <b>Name</b>: {data.name}
+          </p>
+          <p>
+            <b>Age</b>: {data.age}
+          </p>
+          <p>
+            <b>Breed</b>: {data.breed}
+          </p>
+          <p>
+            <b>Personality</b>: {data.personality}
+          </p>
+          <p>
+            <b>Description</b>: {data.description}
+          </p>
+        </div>
+
+        <button type="submit" className="btn">
+          Edit Profile
+        </button>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,6 +1,4 @@
 exports.seed = async function (knex) {
-  // Deletes ALL existing entries
-  await knex('dogs').del()
   await knex('dogs').insert([
     {
       id: 1,
@@ -9,7 +7,7 @@ exports.seed = async function (knex) {
       breed: 'pug',
       personality: 'grumpy',
       description: 'always hungry',
-      image: './images/pug.jpg',
+      image: '/images/pug.jpg',
     },
     {
       id: 2,

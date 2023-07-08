@@ -1,20 +1,25 @@
-import { useEffect, useState } from 'react'
+import { FormEvent } from 'react'
 import { useQuery } from 'react-query'
-import { DogDataBackend } from '../../common/dogs'
+import { Link } from 'react-router-dom'
 import { fetchDogs } from '../apis/dogsApis'
 function PetMainPage() {
   const { isLoading, data } = useQuery('getDogs', async () => {
     return await fetchDogs()
   })
 
+  function handleSubmit(event: FormEvent, id: number) {
+    event.preventDefault()
+    console.log('Selected Dog ID:', id)
+  }
+
   return (
-    <ul>
-      <div className="formContainer">
-        {!isLoading &&
-          data &&
-          data.map((dog) => (
-            <li key={dog.id}>
-              <form className="dogForm">
+    <form className="dogForm">
+      <ul>
+        <div className="formContainer">
+          {!isLoading &&
+            data &&
+            data.map((dog) => (
+              <li key={dog.id}>
                 <div className="dogBox">
                   <img src={dog.image} alt={dog.name} />
                   <p>
@@ -32,15 +37,23 @@ function PetMainPage() {
                   <p>
                     <b>Description</b>: {dog.description}
                   </p>
-                  <button type="button" onClick={() => handleSelectDog(dog)}>
-                    Select Dog
+                  <button
+                    type="submit"
+                    onClick={(event) => handleSubmit(event, dog.id)}
+                  >
+                    <Link
+                      to={`/detail/${dog.id}`}
+                      style={{ textDecoration: 'none', color: '#694E4E' }}
+                    >
+                      Select Dog
+                    </Link>
                   </button>
                 </div>
-              </form>
-            </li>
-          ))}
-      </div>
-    </ul>
+              </li>
+            ))}
+        </div>
+      </ul>
+    </form>
   )
 }
 
